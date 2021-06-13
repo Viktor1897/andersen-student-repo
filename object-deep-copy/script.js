@@ -8,7 +8,7 @@ const originalObj = {
 function deepObjectCopy (obj) {
   const clone = {};
   for (let key in obj) {
-    if (typeof obj[key] === "object") {
+    if (typeof obj[key] === "object" && !Array.isArray(obj[key])) {
       clone[key] = deepObjectCopy(obj[key]);
     } else {
       clone[key] = obj[key];
@@ -22,15 +22,24 @@ const copiedObject = deepObjectCopy(originalObj);
 
 /*---Demo---*/
 console.group('origin Object:');
-  console.log(originalObj);
+  console.log(JSON.parse(JSON.stringify(originalObj)));
 console.groupEnd();
 
 console.group('copied Object:');
-  console.log(copiedObject);
+  console.log(JSON.parse(JSON.stringify(copiedObject)));
 console.groupEnd();
 
-console.group('adding new data to original object:');
-console.log(originalObj.obj.newField = 'newFiled');
-console.log("copied object hasn't changed:");
-console.log(copiedObject.obj);
+console.group('%c add new data to original object:', 'background: #555; color: #bada55');
+  console.log(`originalObj.obj.newField = %c${originalObj.obj.newField = 'newFiled'}`, 'color: red');
+  console.log("%c copied object hasn't changed:", 'background: #555; color: #bada55');
+  console.log(`copiedObject.obj.newField = %c${copiedObject.obj.newField}`, 'color: red');
 console.groupEnd();
+
+console.group('origin Object:');
+  console.log(JSON.parse(JSON.stringify(originalObj)));
+console.groupEnd();
+
+console.group('copied Object:');
+  console.log(JSON.parse(JSON.stringify(copiedObject)));
+console.groupEnd();
+
