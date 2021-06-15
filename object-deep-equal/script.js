@@ -4,7 +4,6 @@ const object1 = {
   skills: ["JS", "HTML5", "CSS3"],
   obj: {a: "a", b: "b", c: {a1:"a1", b1: "b1", c1: {a2: "a2", b2: "b2"}}}
 }
-
 const object2 = {
   name: "Viktor",
   age: 24,
@@ -16,6 +15,12 @@ const object3 = {
   age: 24,
   skills: ["JS", "HTML5", "CSS3"],
   obj: {a: "a", b: "b", c: {a1:"a1", b1: "b1", c1: {a2: "a2", b2: "b2", b3: "b3"}}}
+}
+const object4 = {
+  name: "Viktor",
+  age: 24,
+  skills: ["JS", "HTML5", "CSS3"],
+  obj: {a: "a", b: "b", c: {a1:"a1", b1: "b1", c1: {a2: "a2", b2: "b2"}}}
 }
 
 function deepObjectsEqual (obj1, obj2) {
