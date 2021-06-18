@@ -55,3 +55,7 @@ button:active {
 .stopwatch__circle-time li {
     margin-left: 20px;
 }
+
+.stopwatch__circle-time li::marker {
+    color: #1E90FF;
+}
