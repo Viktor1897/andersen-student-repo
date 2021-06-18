@@ -10,7 +10,7 @@ btns.addEventListener('click', (e) => {
             break;
         case 'Pause': pause();
             break;
-        case 'Reset':
+        case 'Reset': reset();
             break;
     }
 });
@@ -35,4 +35,9 @@ function start() {
 function pause() {
     clearInterval(timer);
     stopwatch.classList.add('pause');
+}
+
+function reset() {
+    milliseconds = 0;
+    display.textContent = '00 : 00 : 00 : 00'
 }
