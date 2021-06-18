@@ -21,11 +21,16 @@ function start() {
     }
 }
 
+function pause() {
+    clearInterval(timer);
+    stopwatch.classList.add('pause');
+}
+
 btns.addEventListener('click', (e) => {
     switch (e.target.textContent) {
         case 'Start': start();
             break;
-        case 'Stop':
+        case 'Pause': pause();
             break;
         case 'Reset':
             break;
