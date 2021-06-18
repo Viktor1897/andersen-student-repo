@@ -45,6 +45,9 @@ function pause() {
 function reset() {
     milliseconds = 0;
     display.textContent = '00 : 00 : 00 : 00'
+    while (circleTimeList.firstChild) {
+        circleTimeList.removeChild(circleTimeList.firstChild);
+    }
 }
 
 function noteCircleTime() {
