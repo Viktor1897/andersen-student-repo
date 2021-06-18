@@ -1,6 +1,8 @@
 const btns = document.querySelector('.stopwatch__btns')
+const startBtn = document.querySelector('.stopwatch__start')
 const display = document.querySelector('.stopwatch__display');
 const stopwatch = document.querySelector('.stopwatch');
+const circleTimeList = document.querySelector('.stopwatch__circle-time'); 
 let milliseconds = 0;
 let timer;
 
@@ -12,12 +14,14 @@ btns.addEventListener('click', (e) => {
             break;
         case 'Reset': reset();
             break;
+        case 'Time': noteCircleTime();
     }
 });
 
 function start() {
     if (stopwatch.classList.contains('pause')) {
         stopwatch.classList.remove('pause');
+        startBtn.textContent = 'Time';
         clearInterval(timer);
         timer = setInterval(() => {
             milliseconds += 10;
@@ -35,9 +39,16 @@ function start() {
 function pause() {
     clearInterval(timer);
     stopwatch.classList.add('pause');
+    startBtn.textContent = 'Start';
 }
 
 function reset() {
     milliseconds = 0;
     display.textContent = '00 : 00 : 00 : 00'
+}
+
+function noteCircleTime() {
+    let circleTime = document.createElement('li');
+    circleTime.textContent = display.textContent;
+    circleTimeList.appendChild(circleTime);
 }
