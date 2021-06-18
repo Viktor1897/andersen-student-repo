@@ -4,6 +4,17 @@ const stopwatch = document.querySelector('.stopwatch');
 let milliseconds = 0;
 let timer;
 
+btns.addEventListener('click', (e) => {
+    switch (e.target.textContent) {
+        case 'Start': start();
+            break;
+        case 'Pause': pause();
+            break;
+        case 'Reset':
+            break;
+    }
+});
+
 function start() {
     if (stopwatch.classList.contains('pause')) {
         stopwatch.classList.remove('pause');
@@ -25,14 +36,3 @@ function pause() {
     clearInterval(timer);
     stopwatch.classList.add('pause');
 }
-
-btns.addEventListener('click', (e) => {
-    switch (e.target.textContent) {
-        case 'Start': start();
-            break;
-        case 'Pause': pause();
-            break;
-        case 'Reset':
-            break;
-    }
-});
