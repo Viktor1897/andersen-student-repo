@@ -31,11 +31,25 @@ body {
     margin-top: 20px;
 }
 
+.stopwatch__start {
+  background-image: url("assets/img/play.png");
+}
+.stopwatch__pause {
+  background-image: url("assets/img/pause.png");
+}
+.stopwatch__reset {
+  background-image: url("assets/img/reset.png");
+}
+.stopwatch__lap {
+  background-image: url("assets/img/stopwatch.png");
+}
+
 button {
-    background-color: #1E90FF;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: #1E90FF;
+  border: none;
+  cursor: pointer;
 }
 button:hover {
     background-color: #00BFFF;
