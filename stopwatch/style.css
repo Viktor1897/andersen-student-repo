@@ -6,21 +6,31 @@
 
 body {
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width:  1000px;
 }
 
 .header {
     width: 300px;
-    margin: 0 auto;
+    margin: 5vh auto;
     text-align: center;
-    margin-top: 10vh;
+
 }
 .stopwatch {
-    margin: 0 auto;
-    margin-top: 40px;
     width: 300px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: #1E90FF 2px dashed;
 }
 
 .stopwatch__display {
@@ -62,7 +72,6 @@ button:active {
  margin-top: 20px;   
  padding: 16px;
  font-size: 20px;
- background-color: rgba(255, 255, 255, 0.089);
  display: flex;
  flex-direction: column-reverse;
 }
@@ -72,4 +81,20 @@ button:active {
 
 .stopwatch__circle-time li::marker {
     color: #1E90FF;
+}
+
+.add-new-stopwatch {
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity 0.2s ease-in;
+}
+.add-new-stopwatch:hover {
+  opacity: 1;
+}
+
+.add-new-stopwatch__plus {
+  margin: auto;
+  font-size: 160px;
+  font-weight: 100;
+  
 }
