@@ -31,10 +31,13 @@ body {
     flex-direction: column;
     align-items: center;
     border: #1E90FF 2px dashed;
+    border-radius: 10px;
+    position: relative;
 }
 
 .stopwatch__display {
     font-size: 36px;
+    margin-top: 10px;
 }
 
 .stopwatch__btns {
@@ -61,6 +64,9 @@ button {
   border: none;
   cursor: pointer;
 }
+button[disabled] {
+  background-color: #6d6d6d;
+}
 button:hover {
     background-color: #00BFFF;
 }
@@ -69,8 +75,7 @@ button:active {
 }
 
 .stopwatch__circle-time {
- margin-top: 20px;   
- padding: 16px;
+ padding: 10px;
  font-size: 20px;
  display: flex;
  flex-direction: column-reverse;
@@ -96,5 +101,12 @@ button:active {
   margin: auto;
   font-size: 160px;
   font-weight: 100;
-  
+  line-height: 0;
+}
+
+.timer-id {
+  color: #6e6e6e;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
